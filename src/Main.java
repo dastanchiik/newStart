@@ -1,5 +1,4 @@
 import java.util.ArrayList;
-
 public class Main {
     public static void main(String[] args) {
         method();
@@ -20,10 +19,5 @@ public class Main {
         System.out.println("all number:"+ints);
         System.out.println("tak sandar:"+tak);
         System.out.println("jup sandar:"+jup);
-//        while (array%2==0){
-
-//        System.out.println("tak sandar:"+tak);
-//        System.out.println("jup sandar:"+jup);
-
     }
 }
