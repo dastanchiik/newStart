@@ -1,89 +1,29 @@
-import java.util.Random;
-import java.util.Scanner;
+import java.util.ArrayList;
+
 public class Main {
     public static void main(String[] args) {
-        System.out.println("-----<<<Start game>>>-----" + "\n" + "Predicate amount of points (2 ... 12)" + "\n" + "Write here:");
-        Scanner scanner = new Scanner(System.in);
-        int number = scanner.nextInt();
-        int count = 1;
-        if (number > 1 && number < 13) {
-            while (count != 4) {
-                game(number);
-                count++;
-                if (count != 4) {
-                    System.out.println("-----<<<Round " + count + ">>>-----" + "\n" + "Predicate amount of points (2 ... 12)" + "\n" + "Write here:");
-                    number = scanner.nextInt();
-                }
+        method();
+    }
+    public static void method(){
+        ArrayList<Integer>ints = new ArrayList<>();
+        ArrayList<Integer>tak = new ArrayList<>();
+        ArrayList<Integer>jup = new ArrayList<>();
+        int[]array = {30, 49, 74, 9, 5, 60, 62, 35, 93, 16, 84, 73, 48, 93, 85, 3, 63, 90, 58, 99, 15, 28, 98, 2, 89, 51, 18, 6, 52, 21, 87, 20, 31, 97, 78, 58, 3, 86, 55, 88, 57, 26, 27, 45, 2, 21, 85, 97, 70, 74};
+        for (Integer e:array) {
+            ints.add(e);
+            if (e%2==0){
+                jup.add(e);
+            } else if (e%2==1) {
+                tak.add(e);
             }
         }
-    }
-    public static void game(int a) {
-        Random random = new Random();
-        int ran = random.nextInt(1, 6);
-        int ran0 = random.nextInt(1, 6);
-        cubUser1(ran);
-        cubUser1(ran0);
-        int plus = ran + ran0;
-        int b = Math.max(plus, a);
-        int c = Math.min(plus, a);
-        int d = b - c;
-        int p = d * 2;
-        int botNumber = random.nextInt(2, 12);
-        System.out.println("Number bot: " + botNumber);
-        int superPlus = random.nextInt(1, 6);
-        int superMinus = random.nextInt(1, 6);
-        cubUser1(superPlus);
-        cubUser1(superMinus);
-        int megaPlus = superPlus + superMinus;
-        int q = Math.max(megaPlus, botNumber);
-        int w = Math.min(megaPlus, botNumber);
-        int e = q - w;
-        int o = e * 2;
-        System.out.println("-----Current score-----");
-        System.out.println("point user: " + p + "\n" + "point bot: " + o);
-        int countUser = 0;
-        int countBot = 0;
-        int countDraw = 0;
-        if (p > o) {
-            int num = p - o;
-            System.out.println("User is ahead by " + num + " points!");
-            countUser++;
-        } else if (p == o) {
-            System.out.println("Draw");
-            countDraw++;
-        } else {
-            int num1 = p - o;
-            System.out.println("Bot is ahead by " + num1 + " points!");
-            countBot++;
-        }
-        if (countBot > countUser && countDraw < countBot) {
-            System.out.println("Bot win");
-        } else if (countUser > countBot && countUser > countDraw) {
-            System.out.println("User win");
-        } else {
-            System.out.println("Draw");
-        }
-    }
-    public static void cubUser1(int randomForCub) {
-        switch (randomForCub) {
-            case 1:
-                System.out.println("+-------+\n|       |\n|   #   |\n|       |\n+-------+");
-                break;
-            case 2:
-                System.out.println("+-------+\n| #     |\n|       |\n|     # |\n+-------+");
-                break;
-            case 3:
-                System.out.println("+-------+\n|     # |\n|   #   |\n| #     |\n+-------+");
-                break;
-            case 4:
-                System.out.println("+-------+\n| # #   |\n| # #   |\n|       |\n+-------+");
-                break;
-            case 5:
-                System.out.println("+-------+\n| #   # |\n|   #   |\n| #   # |\n+-------+");
-                break;
-            case 6:
-                System.out.println("+-------+\n| #   # |\n| #   # |\n| #   # |\n+-------+");
-                break;
-        }
+        System.out.println("all number:"+ints);
+        System.out.println("tak sandar:"+tak);
+        System.out.println("jup sandar:"+jup);
+//        while (array%2==0){
+
+//        System.out.println("tak sandar:"+tak);
+//        System.out.println("jup sandar:"+jup);
+
     }
 }
